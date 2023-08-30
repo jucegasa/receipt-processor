@@ -16,7 +16,7 @@ data class Receipt(
     val retailer: String,
     val purchaseDate: LocalDate,
     val purchaseTime: LocalTime,
-    val total: BigDecimal,
+    val total: Double,
 
     @ElementCollection
     @CollectionTable(name = "receipt_items", joinColumns = [JoinColumn(name = "receipt_id")])
@@ -25,6 +25,6 @@ data class Receipt(
     @Embeddable
     data class Item(
         val shortDescription: String,
-        val price: BigDecimal
+        val price: Double
     )
 }
