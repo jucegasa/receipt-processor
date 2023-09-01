@@ -1,0 +1,4 @@
+FROM gradle:8.2.1-jdk17 AS test
+COPY --chown=gradle:gradle . /home/gradle/src
+WORKDIR /home/gradle/src
+CMD ["gradle", "test", "--no-daemon"]
